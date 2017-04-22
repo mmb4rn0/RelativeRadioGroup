@@ -1,9 +1,9 @@
 # RelativeRadioGroup
 RadioGroup holds the property of LinearLayout. So it organizes RadioButton either Vertical or Horizontal. But this one holds the property of RelativeLayout. So RadioButtons can be organized relatively.
 
-![alt tag](https://github.com/mmb4rn0/RelativeRadioGroup/blob/master/website/static/device-2017-04-22-233215.png)
+<img src="https://github.com/mmb4rn0/RelativeRadioGroup/blob/master/website/static/device-2017-04-22-233215.png" width="200" height="356">
 
-[![alt tag](https://jitpack.io/v/mmb4rn0/RelativeRadioGroup.svg)](https://jitpack.io/#mmb4rn0/RelativeRadioGroup)
+[![](https://jitpack.io/v/mmb4rn0/RelativeRadioGroup.svg)](https://jitpack.io/#mmb4rn0/RelativeRadioGroup)
 
 # Download
 Grab via gradle-
