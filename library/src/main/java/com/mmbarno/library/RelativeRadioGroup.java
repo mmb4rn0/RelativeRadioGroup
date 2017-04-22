@@ -12,10 +12,6 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 
-/**
- * Created by mmbarno on 4/22/17.
- */
-
 public class RelativeRadioGroup extends RelativeLayout {
 
     private static final String TAG = "CustomRadioGroup";
@@ -113,7 +109,6 @@ public class RelativeRadioGroup extends RelativeLayout {
      * such an operation is equivalent to invoking {@link #clearCheck()}.</p>
      *
      * @param id the unique id of the radio button to select in this group
-     *
      * @see #getCheckedRadioButtonId()
      * @see #clearCheck()
      */
@@ -156,11 +151,9 @@ public class RelativeRadioGroup extends RelativeLayout {
      * Upon empty selection, the returned value is -1.</p>
      *
      * @return the unique id of the selected radio button in this group
-     *
+     * @attr ref android.R.styleable#RadioGroup_checkedButton
      * @see #check(int)
      * @see #clearCheck()
-     *
-     * @attr ref android.R.styleable#RadioGroup_checkedButton
      */
     public int getCheckedRadioButtonId() {
         return mCheckedId;
@@ -222,10 +215,9 @@ public class RelativeRadioGroup extends RelativeLayout {
      * <p>This set of layout parameters defaults the width and the height of
      * the children to {@link #WRAP_CONTENT} when they are not specified in the
      * XML file. Otherwise, this class ussed the value read from the XML file.</p>
-     *
+     * <p>
      * <p>See
      * for a list of all child view attributes that this class supports.</p>
-     *
      */
     private static class LayoutParams extends RelativeLayout.LayoutParams {
         /**
@@ -248,8 +240,8 @@ public class RelativeRadioGroup extends RelativeLayout {
          * height to  {@link android.view.ViewGroup.LayoutParams#WRAP_CONTENT}
          * when not specified in the XML file.</p>
          *
-         * @param a the styled attributes set
-         * @param widthAttr the width attribute to fetch
+         * @param a          the styled attributes set
+         * @param widthAttr  the width attribute to fetch
          * @param heightAttr the height attribute to fetch
          */
         @Override
@@ -285,7 +277,7 @@ public class RelativeRadioGroup extends RelativeLayout {
          * <p>Called when the checked radio button has changed. When the
          * selection is cleared, checkedId is -1.</p>
          *
-         * @param group the group in which the checked radio button has changed
+         * @param group     the group in which the checked radio button has changed
          * @param checkedId the unique identifier of the newly checked radio button
          */
         void onCheckedChanged(RelativeRadioGroup group, int checkedId);
