@@ -66,7 +66,6 @@ or via Maven-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/button1"
-            android:layout_weight="1"
             android:text="Button 3" />
 
         <RadioButton
@@ -76,7 +75,6 @@ or via Maven-
             android:layout_alignLeft="@+id/button2"
             android:layout_alignTop="@+id/button3"
             android:layout_toRightOf="@+id/button3"
-            android:layout_weight="1"
             android:text="Button 4" />
    </com.mmbarno.library.RelativeRadioGroup>
    ```
