@@ -18,7 +18,7 @@ Grab via gradle-
   ```  
   Step 2. Add the dependency 
   ```grovy	
-   	dependencies {
+   dependencies {
 	        compile 'com.github.mmb4rn0:RelativeRadioGroup:v1.0.1'
 	}
   ```
