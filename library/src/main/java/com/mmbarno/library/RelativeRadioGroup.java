@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
@@ -14,7 +13,6 @@ import android.widget.RelativeLayout;
 
 public class RelativeRadioGroup extends RelativeLayout {
 
-    private static final String TAG = "CustomRadioGroup";
     // holds the checked id; the selection is empty by default
     private int mCheckedId = -1;
     // tracks children radio buttons checked state
@@ -44,7 +42,6 @@ public class RelativeRadioGroup extends RelativeLayout {
                 attrs, R.styleable.RelativeRadioGroup, 0, 0);
 
         int value = attributes.getResourceId(R.styleable.RelativeRadioGroup_checkedButton, View.NO_ID);
-        Log.d(TAG, "CustomRadioGroup: value=" + value);
         if (value != View.NO_ID) {
             mCheckedId = value;
         }
@@ -64,7 +61,6 @@ public class RelativeRadioGroup extends RelativeLayout {
      */
     @Override
     public void setOnHierarchyChangeListener(OnHierarchyChangeListener listener) {
-        Log.i(TAG, "setOnHierarchyChangeListener: ");
         // the user listener is delegated to our pass-through listener
         mPassThroughListener.mOnHierarchyChangeListener = listener;
     }
@@ -75,7 +71,6 @@ public class RelativeRadioGroup extends RelativeLayout {
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        Log.d(TAG, "onFinishInflate: ");
         // checks the appropriate radio button as requested in the XML file
         if (mCheckedId != -1) {
             mProtectFromCheckedChange = true;
@@ -87,7 +82,6 @@ public class RelativeRadioGroup extends RelativeLayout {
 
     @Override
     public void addView(View child, int index, ViewGroup.LayoutParams params) {
-        Log.d(TAG, "addView: ");
         if (child instanceof RadioButton) {
             final RadioButton button = (RadioButton) child;
             if (button.isChecked()) {
@@ -113,7 +107,6 @@ public class RelativeRadioGroup extends RelativeLayout {
      * @see #clearCheck()
      */
     public void check(int id) {
-        Log.d(TAG, "check: ID=" + id);
         // don't even bother
         if (id != -1 && (id == mCheckedId)) {
             return;
@@ -131,7 +124,6 @@ public class RelativeRadioGroup extends RelativeLayout {
     }
 
     private void setCheckedId(int id) {
-        Log.d(TAG, "setCheckedId: ID=" + id);
         mCheckedId = id;
         if (mOnCheckedChangeListener != null) {
             mOnCheckedChangeListener.onCheckedChanged(this, mCheckedId);
@@ -139,7 +131,6 @@ public class RelativeRadioGroup extends RelativeLayout {
     }
 
     private void setCheckedStateForView(int viewId, boolean checked) {
-        Log.d(TAG, "setCheckedStateForView: ViewID=" + viewId + ", Checked=" + checked);
         View checkedView = findViewById(viewId);
         if (checkedView != null && checkedView instanceof RadioButton) {
             ((RadioButton) checkedView).setChecked(checked);
@@ -186,7 +177,6 @@ public class RelativeRadioGroup extends RelativeLayout {
      */
     @Override
     public RelativeRadioGroup.LayoutParams generateLayoutParams(AttributeSet attrs) {
-        Log.d(TAG, "generateLayoutParams: ");
         return new RelativeRadioGroup.LayoutParams(getContext(), attrs);
     }
 
@@ -195,19 +185,16 @@ public class RelativeRadioGroup extends RelativeLayout {
      */
     @Override
     protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
-        Log.d(TAG, "checkLayoutParams: ");
         return p instanceof RelativeRadioGroup.LayoutParams;
     }
 
     @Override
     protected RelativeLayout.LayoutParams generateDefaultLayoutParams() {
-        Log.d(TAG, "generateDefaultLayoutParams: ");
         return new RelativeRadioGroup.LayoutParams(RelativeRadioGroup.LayoutParams.WRAP_CONTENT, RelativeRadioGroup.LayoutParams.WRAP_CONTENT);
     }
 
     @Override
     public CharSequence getAccessibilityClassName() {
-        Log.d(TAG, "getAccessibilityClassName: ");
         return RelativeRadioGroup.class.getName();
     }
 
@@ -245,9 +232,7 @@ public class RelativeRadioGroup extends RelativeLayout {
          * @param heightAttr the height attribute to fetch
          */
         @Override
-        protected void setBaseAttributes(TypedArray a,
-                                         int widthAttr, int heightAttr) {
-            Log.d(TAG, "setBaseAttributes: ");
+        protected void setBaseAttributes(TypedArray a, int widthAttr, int heightAttr) {
             if (a.hasValue(widthAttr)) {
                 width = a.getLayoutDimension(widthAttr, "layout_width");
             } else {
@@ -263,7 +248,6 @@ public class RelativeRadioGroup extends RelativeLayout {
 
         @Override
         public void setLayoutDirection(int layoutDirection) {
-            Log.d(TAG, "setLayoutDirection: ");
             super.setLayoutDirection(layoutDirection);
         }
     }
@@ -285,7 +269,6 @@ public class RelativeRadioGroup extends RelativeLayout {
 
     private class CheckedStateTracker implements CompoundButton.OnCheckedChangeListener {
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            Log.d(TAG, "onCheckedChanged: Checked=" + isChecked + ", CheckedID=" + mCheckedId);
             // prevents from infinite recursion
             if (mProtectFromCheckedChange) {
                 return;
