@@ -19,7 +19,7 @@ Grab via gradle-
   Step 2. Add the dependency 
   ```grovy	
    dependencies {
-	        compile 'com.github.mmb4rn0:RelativeRadioGroup:v1.0.1'
+	        compile 'com.github.mmb4rn0:RelativeRadioGroup:v1.0.2'
 	}
   ```
 or via Maven-
@@ -35,9 +35,9 @@ or via Maven-
   Step 2. Add the dependency
   ```xml
    <dependency>
-	    <groupId>com.github.User</groupId>
-	    <artifactId>Repo</artifactId>
-	    <version>Tag</version>
+	    <groupId>com.github.mmb4rn0</groupId>
+	    <artifactId>RelativeRadioGroup</artifactId>
+	    <version>v1.0.2</version>
 	</dependency>
   ```
 # Sample Code
