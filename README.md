@@ -1,5 +1,7 @@
 # RelativeRadioGroup
-RadioGroup holds the property of LinearLayout. So it organizes RadioButton either Vertical or Horizontal. But this one holds the property of RelativeLayout. So RadioButtons can be organized relatively.
+RadioGroup extends LinearLayout. So it organizes RadioButtons either Vertically or Horizontally. That works very good for straight forward design. But sometimes design requirements came with RadioButtons in Grid or other relational alignments. In that case RadioGroup fails.
+
+So, we can solve that in many ways. like with some nested views and some complex checked/unchecked decisions. Change listener will also be very difficult to manage. This RasioGroup actually stands to make life easier in those cases. This holds all properties of RadioGroup with some additional relative view arrangements features.
 
 <img src="https://github.com/mmb4rn0/RelativeRadioGroup/blob/master/website/static/device-2017-04-22-233215.png" width="200" height="356">
 
