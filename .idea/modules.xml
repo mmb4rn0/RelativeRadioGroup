@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-RelativeRadioGroup.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-RelativeRadioGroup.iml" group="RelativeRadioGroup" />
       <module fileurl="file://$PROJECT_DIR$/RelativeRadioGroup.iml" filepath="$PROJECT_DIR$/RelativeRadioGroup.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/RelativeRadioGroup-library.iml" filepath="$PROJECT_DIR$/library/RelativeRadioGroup-library.iml" group="RelativeRadioGroup/library" />
+      <module fileurl="file://$PROJECT_DIR$/sample/RelativeRadioGroup-sample.iml" filepath="$PROJECT_DIR$/sample/RelativeRadioGroup-sample.iml" group="RelativeRadioGroup/sample" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
     </modules>
